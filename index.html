@@ -1,61 +1,468 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunza Wild Expeditions</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- 🌍 SEO Optimization -->
+    <title>Tunza Wild Expeditions | Luxury Tanzania Safaris & Trekking</title>
+    <meta name="description" content="Experience Luxury Tanzania safaris with Tunza Wild Expeditions. Private tours to Serengeti, Ngorongoro Crater, Mount Kilimanjaro trekking, and Zanzibar beach holidays.">
+    <meta name="keywords" content="Tanzania safari, Serengeti luxury tours, Ngorongoro crater trip, Mount Kilimanjaro trekking, Zanzibar beach holidays, Tunza Wild">
+    <meta name="author" content="Tunza Wild Expeditions">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tunza Wild Expeditions | Luxury Tanzania Safaris">
+    <meta property="og:description" content="Let us design your perfect private safari experience in Serengeti, Kilimanjaro, and Zanzibar.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/ffffff/compass.png">
+
+    <!-- Google Fonts (Fixed Link) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0b0f17;
+            --surface-color: #121824;
+            --accent-color: #cda250; /* Luxury Gold */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(11, 15, 23, 0.95);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(205, 162, 80, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(11, 15, 23, 0.6), rgba(11, 15, 23, 0.85)), 
+                        url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000000;
+        }
+
+        .btn-primary:hover {
+            background-color: #b08637;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(205, 162, 80, 0.1);
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 0.95rem;
+        }
+
+        /* Destinations Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        .price {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .duration {
+            color: var(--text-muted);
+        }
+
+        /* Call To Action Section */
+        .cta-section {
+            background: linear-gradient(rgba(11, 15, 23, 0.85), rgba(11, 15, 23, 0.95)), 
+                        url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(205, 162, 80, 0.15);
+            border-bottom: 1px solid rgba(205, 162, 80, 0.15);
+        }
+
+        .cta-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 550px;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(205, 162, 80, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #06080d;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            nav {
+                position: relative;
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            body {
+                padding-top: 0;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .btn {
+                display: block;
+                margin: 10px auto !important;
+                width: 90%;
+            }
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Tunza <span>Wild</span></div>
+    <!-- 🧭 Navigation Bar -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#safaris">Safaris</a>
-        <a href="#contact">Contact</a>
+        <a href="#" class="logo">TUNZA WILD</a>
+        <ul class="nav-links">
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#contact">Enquire</a></li>
+        </ul>
     </nav>
-</header>
 
-<div class="hero" id="home">
-    <div class="hero-content">
-        <h1>Luxury Tanzania Safari Experiences</h1>
-        <p>Explore Serengeti, Ngorongoro, Kilimanjaro & Zanzibar with expert local guides.</p>
-        <div class="btn-container">
-            <a href="#safaris" class="btn btn-primary">Explore Safaris</a>
-            <a href="https://wa.me/255700000000" class="btn btn-secondary">WhatsApp Us</a>
+    <!-- 🌅 Hero Section -->
+    <header class="hero">
+        <h1>Luxury Tanzania Safaris</h1>
+        <p>Explore Serengeti, Ngorongoro Crater, Kilimanjaro & Zanzibar with expert local guides tailored perfectly for you.</p>
+        <div>
+            <a href="#contact" class="btn btn-primary">Book Your Safari</a>
+            <a href="https://wa.me/255700000000?text=Hello%20Tunza%20Wild%20Expeditions,%20I%20would%20like%20to%20book%20a%20safari.%20My%20preferred%20destination%20is%20______%20and%20dates%20are%20______." target="_blank" class="btn btn-secondary">WhatsApp Us</a>
         </div>
-    </div>
-</div>
+    </header>
 
-<section id="about">
-    <h2 class="section-title">Why Choose Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        We create luxury, safe and unforgettable Tanzania safari experiences tailored for you.
-    </p>
-</section>
+    <!-- 🗺️ Destinations Section -->
+    <section id="destinations">
+        <h2 class="section-title">Featured Experiences</h2>
+        <p class="section-subtitle">Handcrafted itineraries designed around pure wilderness luxury and timeless comfort.</p>
+        
+        <div class="grid">
+            <!-- Card 1: Serengeti -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="card-content">
+                    <h3>Great Migration Safari</h3>
+                    <p>Witness the spectacular wildlife show on earth. Luxury tented camps deep in the heart of Serengeti National Park.</p>
+                    <div class="card-meta">
+                        <span class="duration">🔥 Limited Slots Left</span>
+                        <span class="price">From $1,500 pp</span>
+                    </div>
+                </div>
+            </div>
 
-<section id="safaris">
-    <h2 class="section-title">Featured Destinations</h2>
-    <div class="cards-grid">
-        <div class="card"><div class="card-content"><h3>Serengeti Safari</h3></div></div>
-        <div class="card"><div class="card-content"><h3>Ngorongoro Crater</h3></div></div>
-        <div class="card"><div class="card-content"><h3>Zanzibar Beach</h3></div></div>
-    </div>
-</section>
+            <!-- Card 2: Ngorongoro -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="card-content">
+                    <h3>Crater & Highlands</h3>
+                    <p>Descend into the Ngorongoro crater floor for unparalleled big five viewing followed by luxury lodge relaxation.</p>
+                    <div class="card-meta">
+                        <span class="duration">🕒 4–7 Days Packages</span>
+                        <span class="price">From $1,200 pp</span>
+                    </div>
+                </div>
+            </div>
 
-<section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-wrapper">
-        <p>Email: info@tunzawild.com</p>
-        <p>WhatsApp: +255 700 000 000</p>
-    </div>
-</section>
+            <!-- Card 3: Zanzibar -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="card-content">
+                    <h3>Zanzibar Beach Luxury</h3>
+                    <p>Unwind along the pristine, white sands of the Indian Ocean. Private villas, spice tours, and elite ocean diving.</p>
+                    <div class="card-meta">
+                        <span class="duration">🏝️ Year-Round Paradise</span>
+                        <span class="price">From $850 pp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Tunza Wild Expeditions</p>
-</footer>
+    <!-- 🚀 Call To Action Section -->
+    <section class="cta-section">
+        <h2>Ready for Your Tanzania Adventure?</h2>
+        <p>Let our safari specialists design your perfect private experience.</p>
+        <a href="#contact" class="btn btn-primary">Plan My Custom Safari</a>
+    </section>
+
+    <!-- 📬 Contact Form Section -->
+    <section id="contact">
+        <h2 class="section-title">Start Your Journey</h2>
+        <p class="section-subtitle">Fill in the secure form below. Our concierge team will respond within 12 hours.</p>
+        
+        <div class="contact-container">
+            <form action="https://formspree.io/f/your-id" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Preferred Destination</label>
+                    <select id="destination" name="destination" class="form-control">
+                        <option value="serengeti">Serengeti & Northern Circuit</option>
+                        <option value="kilimanjaro">Mount Kilimanjaro Trekking</option>
+                        <option value="zanzibar">Zanzibar Luxury Beach</option>
+                        <option value="all">Full Tanzania Experience</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Safari Requirements (Dates, Guests, Style)</label>
+                    <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell us about your dream safari..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Send Secure Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 🏁 Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://instagram.com/tunzawildexpeditions" target="_blank">Instagram</a>
+            <a href="#destinations">Packages</a>
+        </div>
+        <p>&copy; 2026 Tunza Wild Expeditions. All Rights Reserved. Crafted for the Wild.</p>
+    </footer>
 
 </body>
 </html>
